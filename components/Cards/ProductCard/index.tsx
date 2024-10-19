@@ -29,7 +29,7 @@ interface Props {
   cardType?: string;
  
 }
-const ProductCard: FC<Props> = ({ product }) => {
+const ProductCard: FC<Props> = ({ product, cardType }) => {
     const productImages = [ image2, image3, image4, image5, image6, image7, image8, image9,image10,image11 ];
     const randomProductImage = setRandomImage(productImages)
 
@@ -41,13 +41,14 @@ const ProductCard: FC<Props> = ({ product }) => {
     // !product.images[0].includes('m.media-amazon.com') && 
     // !product.images[0].includes('ru.freepik.com')  ? product.images[1] : randomProductImage;
 
-    const discount = (product.price * 15) / 100 //Lets give Everyone 15% discount
+    const discount = (product.price * 15) / 100;
     const discountedPrice = product.price - discount;
     
   return (
     <div className={`${styles.productCard}`}>
       <div className={styles.contentSection}>
-        <div className={styles.discountBadge}>{discount}</div>
+        {cardType === 'ourProducts' ? <div className={styles.newProductBadge}>New</div> : 
+        cardType === "bestSelling" ? '' : <div className={styles.discountBadge}>{discount}</div>}
         <div className={styles.iconButtons}>
           <button className={styles.iconButton}>
             <HeartIcon />

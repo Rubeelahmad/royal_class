@@ -1,37 +1,28 @@
 .wrapBox {
   @apply mt-[60px];
-  .bestSalesHeader {
-    .salesLabel {
+  .newArrivalsHeader {
+    .newArrivalsLabel {
       @apply flex gap-4 items-center text-center;
-      .saleslabelTag {
+      .newArrivalslabelTag {
         @apply bg-secondary  rounded-sm w-[20px] h-[40px];
       }
       p {
         @apply text-secondary font-medium text-base;
       }
     }
-    .salesHeading {
-      @apply flex flex-wrap gap-4 justify-between items-center py-6 ;
+    .newArrivalsHeading {
+      @apply flex flex-wrap gap-4 justify-between items-center py-4 ;
       h2 {
         @apply text-[24px] md:text-[36px] font-semibold text-center;
       }
-      .arrowActions {
-        @apply flex gap-2;
-        .arrowCircle {
-          @apply  rounded-full p-3 bg-[#F5F5F5] items-center cursor-pointer;
-        }
-      }
     }
   }
-  .bestSalesCardsSection {
+  .newArrivalsCardsSection {
     @apply flex relative w-full max-w-5xl mx-auto bg-white items-center py-6;
-    .bestSalesCards{
+    .newArrivalsCards{
         @apply flex overflow-x-auto space-x-4;
     }
   }
 
 
 }
-
-
-

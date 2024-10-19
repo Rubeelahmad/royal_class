@@ -6,6 +6,8 @@ import Category from "../Category";
 import CategoryMusicBanner from "../CategoryMusicBanner";
 import BestSellingProducts from "../BestSellingProducts";
 import ExoploreOurProducts from "../ExoploreOurProducts";
+import NewArrivals from "../NewArrivals";
+import HelpAndSupportSection from "../HelpAndSupportSection";
 
 
 const Home = () => {
@@ -17,6 +19,8 @@ const Home = () => {
       <BestSellingProducts/>
       <CategoryMusicBanner/>
       <ExoploreOurProducts/>
+      <NewArrivals/>
+      <HelpAndSupportSection/>
     </>
   );
 };

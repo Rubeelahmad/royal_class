@@ -4,7 +4,11 @@
   .contentSection {
     @apply bg-[#F5F5F5] rounded-lg relative min-h-[250px];
     .discountBadge {
-      @apply absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-sm rounded;
+      @apply absolute top-2 left-2 bg-secondary text-white px-2 py-1 text-sm rounded;
+    }
+    .newProductBadge{
+      @apply absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-sm rounded;
+
     }
     .iconButtons {
       @apply absolute top-2 right-2 flex flex-col space-y-2;

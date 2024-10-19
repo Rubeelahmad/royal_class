@@ -56,7 +56,7 @@ const ExoploreOurProducts = () => {
   return (
     <div className={`${styles.wrapBox}  `}>
       <div className="container border-b-[1px] border-b-primary/10  py-4 md:py-6 ">
-        <div className={styles.flashSalesHeader}>
+        <div className={styles.bestSalesHeader}>
           <div className={styles.salesLabel}>
             <div className={styles.saleslabelTag}></div>
             <p>Our Products</p>
@@ -73,20 +73,20 @@ const ExoploreOurProducts = () => {
             </div>
           </div>
         </div>
-        <div className={styles.flashSalesCardsSection}>
+        <div className={styles.bestSalesCardsSection}>
           <div
-            className={`no-scrollbar ${styles.flashSalesCards}`}
+            className={`no-scrollbar ${styles.bestSalesCards}`}
             ref={sliderRef}
           >
             {products.slice(0, 8).map((product: Product, index: number) => (
               <div key={index} className="flex-shrink-0">
-                <ProductCard product={product} cardType="sales" />
+                <ProductCard product={product} cardType="" />
               </div>
             ))}
           </div>
         </div>
 
-        <div className={styles.flashSalesCardsSection}>
+        <div className={styles.bestSalesCardsSection}>
           <div
             ref={sliderRef}
             className={`no-scrollbar gap-4 ${
@@ -98,12 +98,12 @@ const ExoploreOurProducts = () => {
             {viewAll
               ? products.slice(0, 10).map((product: Product, index: number) => (
                   <div key={index} className="flex items-center justify-center flex-shrink-0  gap-4">
-                    <ProductCard product={product} />
+                    <ProductCard product={product} cardType="ourProducts"/>
                   </div>
                 ))
               : products.slice(0, 4).map((product: Product, index: number) => (
                   <div key={index} className="flex flex-shrink-0 gap-4">
-                    <ProductCard product={product} />
+                    <ProductCard product={product} cardType="ourProducts" />
                   </div>
                 ))}
           </div>

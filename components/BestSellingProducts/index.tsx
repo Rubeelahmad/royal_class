@@ -58,17 +58,17 @@ const BestSellingProducts = () => {
             }`}
           >
             {viewAll
-              ? products.slice(0, 10).map((product: Product, index: number) => (
+              ? products.slice(0, 7).map((product: Product, index: number) => (
                   <div
                     key={index}
                     className="flex items-center justify-center flex-shrink-0  gap-4"
                   >
-                    <ProductCard product={product} />
+                    <ProductCard product={product} cardType="bestSelling"/>
                   </div>
                 ))
               : products.slice(0, 4).map((product: Product, index: number) => (
                   <div key={index} className="flex flex-shrink-0 gap-4">
-                    <ProductCard product={product} />
+                    <ProductCard product={product} cardType="bestSelling"/>
                   </div>
                 ))}
           </div>

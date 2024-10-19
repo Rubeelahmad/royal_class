@@ -1,0 +1,13 @@
+.navigation {
+  ul {
+    @apply flex flex-col gap-0 md:gap-4 py-0 md:py-8;
+    li {
+      @apply flex items-center justify-between my-2 md:my-0;
+     
+      .rightDropDown {
+        @apply  mx-[4px] md:mx-[20px] cursor-pointer;
+
+      }
+    }
+  }
+}

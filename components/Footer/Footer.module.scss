@@ -1,0 +1,73 @@
+.wrapBox {
+  @apply bg-primary py-[40px] mt-10;
+
+  .footer {
+    @apply flex flex-col gap-4;
+
+    .gridbox {
+      @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4; 
+      .col {
+        @apply text-left lg:text-left; 
+
+        h2 {
+          @apply mb-8 text-white text-[24px] font-bold;
+        }
+
+        h3 {
+          @apply mb-8 text-white text-[20px] font-medium;
+        }
+
+        ul {
+          @apply mb-6;
+
+          li {
+            p, a {
+              @apply flex items-center mb-2 text-white text-[16px];
+            }
+
+            h4 {
+              @apply mt-4 mb-4 text-white/80 text-sm font-normal;
+            }
+
+            .inputEmail {
+              @apply relative w-full lg:w-auto; 
+
+              input {
+                @apply text-sm text-white bg-transparent items-center w-full md:w-[80%] lg:w-auto md:h-[48px] py-[12px] pl-[16px] rounded-[4px] border-[1.5px];
+              }
+
+              button {
+                @apply absolute right-2 top-[50%] transform -translate-y-[50%] md:right-4 lg:right-4; 
+              }
+            }
+          }
+        }
+
+        .socialLinks {
+          @apply flex flex-col lg:items-start;
+          
+          .btnActions {
+            @apply flex gap-2;
+
+            .appBtn {
+              @apply flex-col gap-1;
+            }
+          }
+
+          ul {
+            @apply flex gap-6 mt-4; 
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  @apply flex justify-center items-center gap-x-0.5 sm:gap-1 md:gap-2 border-t-[1px] border-t-white/10 py-2 md:py-4; 
+
+  p {
+    @apply flex text-center text-white/30;
+  }
+}
+

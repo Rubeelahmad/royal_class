@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-primary text-base;
+
+  font-family: var(--font-poppins), sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .container {
+    @apply relative max-w-[1070px] m-auto px-4;
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background-color: darkgray;
+      border: 4px solid gray;
+      opacity: 1;
+      border-radius: 50%;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: red;
+      border: 2px solid white;
+    }
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+ 
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+  }
+
+
+  .truncate-text {
+    white-space: nowrap;      
+    overflow: hidden;        
+    text-overflow: ellipsis;  
+    width: 250px;             
+  }
+
+
+}

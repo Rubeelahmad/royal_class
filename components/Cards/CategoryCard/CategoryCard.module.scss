@@ -1,0 +1,18 @@
+.categoryCard {
+  @apply flex w-[130px] md:w-[170px] h-[110px] md:h-[145px] items-center justify-center text-center rounded-md border  border-gray-500/50 overflow-hidden;
+
+.cardContent{
+  @apply flex flex-col gap-2 md:gap-4 py-2 md:py-4 items-center justify-center text-center mx-auto;
+
+  .categoryName{
+    @apply text-xs md:text-base text-primary font-medium;
+  }
+}
+  &:hover {
+    .contentSection {
+        .addToCartBtn{
+            @apply bg-secondary;
+        }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.wrapBox{
+    .hero{
+        @apply grid grid-cols-4 gap-8 ;
+
+        .leftSide{
+            @apply hidden md:block  col-span-1 border-r-[1px] border-r-primary/50;
+        }
+        .rightSide{
+            @apply col-span-4 md:col-span-3 pt-8;
+        }
+    }
+}

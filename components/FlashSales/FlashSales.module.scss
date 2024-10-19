@@ -1,0 +1,54 @@
+/**
+ * A wrapper component that provides a consistent layout and styling for the flash sales cards.
+ */
+.wrapBox {
+  @apply mt-[60px];
+  .flashSalesHeader {
+    .salesLabel {
+      @apply flex gap-4 items-center text-center;
+      .saleslabelTag {
+        @apply bg-secondary  rounded-sm w-[20px] h-[40px];
+      }
+      p {
+        @apply text-secondary font-medium text-base;
+      }
+    }
+    .salesHeading {
+      @apply flex flex-wrap gap-4 justify-between items-center py-6 ;
+      h2 {
+        @apply text-[24px] md:text-[36px] font-semibold text-center;
+      }
+      .dayTime {
+        ul {
+          @apply flex px-2 md:px-4;
+          li {
+            .dayTimeCol {
+              @apply flex flex-col text-white gap-1 md:gap-3 items-center text-start;
+              h3 {
+                @apply text-xs md:text-base font-semibold;
+              }
+            }
+          }
+          h4 {
+            @apply text-secondary px-2 md:px-8 py-4 rounded-full border-b-white font-bold text-[30px];
+          }
+        }
+      }
+
+      .arrowActions {
+        @apply flex gap-2;
+        .arrowCircle {
+          @apply  rounded-full p-3 bg-[#F5F5F5] items-center cursor-pointer;
+        }
+      }
+    }
+  }
+  .flashSalesCardsSection {
+    @apply flex relative w-full max-w-5xl mx-auto bg-white items-center py-6;
+    .flashSalesCards{
+        @apply flex overflow-x-auto space-x-4;
+    }
+  }
+
+
+}

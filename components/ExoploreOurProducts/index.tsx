@@ -13,7 +13,7 @@ import ProductCard from "../Cards/ProductCard";
 const ExoploreOurProducts = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<any>(null);
-  const [viewAll, setViewAll] = useState(false);
+  const [viewAll, setViewAll] = useState(false); 
 
   const dispatch = useAppDispatch();
   const { products, loading: productsLoading } = useSelector(
@@ -49,8 +49,9 @@ const ExoploreOurProducts = () => {
   };
 
   const toggleView = () => {
-    setViewAll((prev) => !prev); // Toggle between showing all products or the initial set
+    setViewAll(!viewAll);
   };
+
 
   return (
     <div className={`${styles.wrapBox}  `}>
@@ -96,7 +97,7 @@ const ExoploreOurProducts = () => {
           >
             {viewAll
               ? products.slice(0, 10).map((product: Product, index: number) => (
-                  <div key={index} className="flex flex-shrink-0  gap-4">
+                  <div key={index} className="flex items-center justify-center flex-shrink-0  gap-4">
                     <ProductCard product={product} />
                   </div>
                 ))
@@ -108,14 +109,7 @@ const ExoploreOurProducts = () => {
           </div>
         </div>
 
-        <div className="mt-8 text-center">
-          <button
-            className="bg-secondary text-sm md:text-base py-2 px-6 rounded-[4px]  text-white"
-            onClick={toggleView}
-          >
-            {viewAll ? "Show Less" : "View All Products"}
-          </button>
-        </div>
+        <ViewProductsBtn viewAll={viewAll} toggleView={toggleView} />
 
       </div>
     </div>

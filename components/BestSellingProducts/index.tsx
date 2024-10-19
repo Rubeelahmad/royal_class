@@ -11,7 +11,7 @@ import Loader from "../Loader";
 import ProductCard from "../Cards/ProductCard";
 
 const BestSellingProducts = () => {
-
+  const [viewAll, setViewAll] = useState(false);
   const dispatch = useAppDispatch();
   const { products, loading: productsLoading } = useSelector(
     (state: RootState) => state.products
@@ -31,6 +31,10 @@ const BestSellingProducts = () => {
     );
   }
 
+  const toggleView = () => {
+    setViewAll(!viewAll);
+  };
+
   return (
     <div className={`${styles.wrapBox}  `}>
       <div className="container border-b-[1px] border-b-primary/10  py-4 md:py-6 ">
@@ -41,18 +45,32 @@ const BestSellingProducts = () => {
           </div>
           <div className={styles.salesHeading}>
             <h2>Best Selling Products</h2>
-             <ViewProductsBtn />
+            <ViewProductsBtn viewAll={viewAll} toggleView={toggleView} />
           </div>
         </div>
+
         <div className={styles.bestSalesCardsSection}>
           <div
-            className={`no-scrollbar ${styles.bestSalesCards}`}
+            className={`no-scrollbar gap-4 ${
+              viewAll
+                ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 "
+                : "flex overflow-x-auto "
+            }`}
           >
-            {products.map((product: Product, index: number) => (
-              <div key={index} className="flex-shrink-0">
-                <ProductCard product={product} cardType="sales" />
-              </div>
-            ))}
+            {viewAll
+              ? products.slice(0, 10).map((product: Product, index: number) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-center flex-shrink-0  gap-4"
+                  >
+                    <ProductCard product={product} />
+                  </div>
+                ))
+              : products.slice(0, 4).map((product: Product, index: number) => (
+                  <div key={index} className="flex flex-shrink-0 gap-4">
+                    <ProductCard product={product} />
+                  </div>
+                ))}
           </div>
         </div>
       </div>

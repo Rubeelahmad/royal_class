@@ -12,6 +12,7 @@ import ProductCard from "../Cards/ProductCard";
 
 const FlashSales = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [viewAll, setViewAll] = useState(false); // Handle viewAll state here
   const sliderRef = useRef<any>(null);
 
   const dispatch = useAppDispatch();
@@ -45,6 +46,10 @@ const FlashSales = () => {
       setCurrentIndex(currentIndex + 1);
       sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
+  };
+
+  const toggleView = () => {
+    setViewAll(!viewAll);
   };
 
   return (
@@ -90,20 +95,34 @@ const FlashSales = () => {
             </div>
           </div>
         </div>
+
         <div className={styles.flashSalesCardsSection}>
           <div
-            className={`no-scrollbar ${styles.flashSalesCards}`}
             ref={sliderRef}
+            className={`no-scrollbar gap-4 ${
+              viewAll
+                ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 "
+                : "flex overflow-x-auto "
+            }`}
           >
-            {products.map((product: Product, index: number) => (
-              <div key={index} className="flex-shrink-0">
-                <ProductCard product={product} cardType="sales" />
-              </div>
-            ))}
+            {viewAll
+              ? products.slice(0, 11).map((product: Product, index: number) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-center flex-shrink-0  gap-4"
+                  >
+                    <ProductCard product={product} />
+                  </div>
+                ))
+              : products.map((product: Product, index: number) => (
+                  <div key={index} className="flex-shrink-0">
+                    <ProductCard product={product} cardType="sales" />
+                  </div>
+                ))}
           </div>
         </div>
 
-        <ViewProductsBtn />
+        <ViewProductsBtn viewAll={viewAll} toggleView={toggleView} />
       </div>
     </div>
   );

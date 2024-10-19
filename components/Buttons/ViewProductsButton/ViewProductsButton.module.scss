@@ -1,6 +1,6 @@
 .viewProductsBtn {
-  @apply flex items-center justify-center text-center py-3 md:py-8;
+  @apply flex items-center justify-center text-center py-2 px-6 ;;
   button {
-    @apply bg-secondary text-sm md:text-base p-2 md:p-4 rounded-[4px] text-white;
+    @apply bg-secondary text-sm md:text-base py-2 px-6 rounded-[4px]  text-white;
   }
 }

@@ -33,7 +33,14 @@ const ProductCard: FC<Props> = ({ product }) => {
     const productImages = [ image2, image3, image4, image5, image6, image7, image8, image9,image10,image11 ];
     const randomProductImage = setRandomImage(productImages)
 
-    const productImg = product && product.images[1] || randomProductImage
+    //API Images Url not coming in the right format
+    // const productImg = product.images && Array.isArray(product.images) &&
+    // product.images.length > 0 &&
+    // !product.images[0].includes('placeimg.com') && 
+    // !product.images[0].includes('api.escuelajs') && 
+    // !product.images[0].includes('m.media-amazon.com') && 
+    // !product.images[0].includes('ru.freepik.com')  ? product.images[1] : randomProductImage;
+
     const discount = (product.price * 15) / 100 //Lets give Everyone 15% discount
     const discountedPrice = product.price - discount;
     
@@ -51,7 +58,7 @@ const ProductCard: FC<Props> = ({ product }) => {
         </div>
 
         <div className={styles.productImg}>
-          <Image src={productImg} alt={product?.name || '' } width={140} height={120} />
+          <Image src={randomProductImage} alt={product?.name || '' } width={140} height={120} />
         </div>
 
         <button className={styles.addToCartBtn}>Add to Cart</button>

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
     images: {
-      domains: ['encrypted-tbn0.gstatic.com', 'i.imgur.com' , 'i.pravatar.cc'], 
+      domains: ['ru.freepik.com','m.media-amazon.com','encrypted-tbn0.gstatic.com', 'i.imgur.com' , 'i.pravatar.cc', 'imagedelivery.net', 'images.only.com', 'escuelajs.co' , 'placeimg.com'], 
     },
   };
   

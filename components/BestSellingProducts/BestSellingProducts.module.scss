@@ -1,0 +1,28 @@
+.wrapBox {
+  @apply mt-[60px];
+  .bestSalesHeader {
+    .salesLabel {
+      @apply flex gap-4 items-center text-center;
+      .saleslabelTag {
+        @apply bg-secondary  rounded-sm w-[20px] h-[40px];
+      }
+      p {
+        @apply text-secondary font-medium text-base;
+      }
+    }
+    .salesHeading {
+      @apply flex flex-wrap gap-4 justify-between items-center py-4 ;
+      h2 {
+        @apply text-[24px] md:text-[36px] font-semibold text-center;
+      }
+    }
+  }
+  .bestSalesCardsSection {
+    @apply flex relative w-full max-w-5xl mx-auto bg-white items-center py-6;
+    .bestSalesCards{
+        @apply flex overflow-x-auto space-x-4;
+    }
+  }
+
+
+}

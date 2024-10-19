@@ -5,7 +5,7 @@ import BufferIcon from './icon/BufferIcon.png'
 
 const CategoryMusicBanner= () => {
   return (
-    <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-16 py-4 bg-black">
+    <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-16 py-4 md:py-6  bg-black mt-12 ">
       <div className="text-white flex flex-col space-y-4 items-center md:items-start text-center md:text-left p-8 md:p-12">
         <p className="text-[#00FF66] text-sm md:text-base font-semibold">
           Categories
@@ -18,12 +18,12 @@ const CategoryMusicBanner= () => {
 
         <div className="flex space-x-2 md:space-x-4 mt-4 justify-center md:justify-start">
           <div className="flex flex-col justify-center items-center text-center rounded-full bg-gray-400 w-[60px] h-[60px] md:w-[80px] md:h-[80px]">
-            <p className="text-xs md:text-4xl font-bold">23</p>
-            <p className="text-[10px] md:text-xs mt-1">Hours</p>
-          </div>
-          <div className="flex flex-col justify-center items-center text-center rounded-full bg-gray-400 w-[60px] h-[60px] md:w-[80px] md:h-[80px]">
             <p className="text-xs md:text-4xl font-bold">05</p>
             <p className="text-[10px] md:text-xs mt-1">Days</p>
+          </div>
+          <div className="flex flex-col justify-center items-center text-center rounded-full bg-gray-400 w-[60px] h-[60px] md:w-[80px] md:h-[80px]">
+            <p className="text-xs md:text-4xl font-bold">23</p>
+            <p className="text-[10px] md:text-xs mt-1">Hours</p>
           </div>
           <div className="flex flex-col justify-center items-center text-center rounded-full bg-gray-400 w-[60px] h-[60px] md:w-[80px] md:h-[80px]">
             <p className="text-xs md:text-4xl font-bold">59</p>

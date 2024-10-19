@@ -50,7 +50,7 @@ const Category = () => {
 
   return (
     <div className={`${styles.wrapBox}  `}>
-      <div className="container border-b-[1px] border-b-primary/10  py-4 md:py-8 ">
+      <div className="container border-b-[1px] border-b-primary/10  py-4 md:py-6">
         <div className={styles.Header}>
           <div className={styles.Label}>
             <div className={styles.labelTag}></div>

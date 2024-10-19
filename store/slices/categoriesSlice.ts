@@ -5,8 +5,8 @@ export interface Category {
   id: number;
   name: string;
   image: string;
-  creationAt: string; // You can use Date type if you want to convert this into a Date object
-  updatedAt: string;  // Same as above, could be Date
+  creationAt: string; 
+  updatedAt: string;  
 }
 
 interface CategoryState {
@@ -21,9 +21,8 @@ const initialState: CategoryState = {
   error: null,
 };
 
-// Thunk to fetch categories from API
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
-  const response = await axios.get('https://api.escuelajs.co/api/v1/categories');
+  const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/categories`);
   return response.data;
 });
 

@@ -1,6 +1,6 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
-import styles from "./NavBar.module.scss"; // Assuming SCSS module is imported
+import styles from "./NavBar.module.scss";
 import FavouriteIcon from "../icons/FavouriteIcon";
 import CartIcon from "../icons/CartIcon";
 import SearchIcon from "../icons/SearchIcon";
@@ -18,10 +18,11 @@ const NavBar = () => {
     setMenuOpen(false);
   };
 
-
   useEffect(() => {
     const updatePlaceholder = () => {
-      setPlaceholderText(window.innerWidth >= 768 ? "What are you looking for?" : "Search...");
+      setPlaceholderText(
+        window.innerWidth >= 768 ? "What are you looking for?" : "Search..."
+      );
     };
     updatePlaceholder();
     window.addEventListener("resize", updatePlaceholder);
@@ -36,22 +37,31 @@ const NavBar = () => {
           {/* Desktop Nav Items */}
           <div className={styles.nav}>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Sign Up</a></li>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Sign Up</a>
+              </li>
             </ul>
           </div>
 
-          
           <div className={styles.actions}>
             <div className={styles.searchBar}>
               <input type="text" placeholder={placeholderText} />
-              <button className={styles.searchBtn}><SearchIcon/></button>
+              <button className={styles.searchBtn}>
+                <SearchIcon />
+              </button>
             </div>
             <div className={styles.actionBtns}>
-              <FavouriteIcon /> 
-              <CartIcon  /> 
+              <FavouriteIcon />
+              <CartIcon />
             </div>
 
             {/* Hamburger Icon for mobile */}
@@ -63,9 +73,7 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Nav (Side Modal) */}
-           {/* Side Menu */}
-           <SideMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
-
+      <SideMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
     </div>
   );
 };

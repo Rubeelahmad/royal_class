@@ -7,7 +7,6 @@ const TopBar = () => {
   const [isMobileDropdownOpen, setMobileDropdownOpen] = useState(false);
 
   const toggleMobileDropdown = () => {
-    // console.log("Dropdown clicked");
     setMobileDropdownOpen(!isMobileDropdownOpen); 
   };
 

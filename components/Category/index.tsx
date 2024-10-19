@@ -19,7 +19,7 @@ const Category = () => {
     (state: RootState) => state.categories
   );
 
-  console.log('categories:::' ,categories)
+
   useEffect(() => {
     if (!categories.length) {
       dispatch(fetchCategories());

@@ -23,9 +23,8 @@ const initialState: ProductState = {
   error: null,
 };
 
-// Thunk to fetch products from API
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  const response = await axios.get('https://api.escuelajs.co/api/v1/products');
+  const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/products`);
   return response.data;
 });
 
